@@ -1,0 +1,46 @@
+<!-- Banner -->
+<div id="banner">
+  <h2>Hi. If you are addicted about <strong>IT and Gadgets</strong>, check this out.</h2>
+  <span class="byline">
+    Its all about development, designing and geeky fun
+  </span>
+</div>
+
+<div class ="wrapper style2">
+  <article id="main" class="container special">
+    <a href="<%= article_path(@last_article.id) %>" class="image featured"><img src="images/24hack_report/24hack_head.jpg" alt=""></a>
+    <header>
+      <h2><a href="<%= article_path(@last_article.id) %>"><%= @last_article.title.html_safe %></a></h2>
+    </header>
+    <p>
+      <%= @last_article.preview.html_safe %>
+    </p>
+    <footer>
+      <a href="<%= article_path(@last_article.id) %>" class="button">Continue Reading</a>
+    </footer>
+  </article>
+</div>
+
+<div class="wrapper style1">
+  <section id="features" class="container special">
+<!--
+    <header>
+      <h2>Older articles</h2>
+    </header> -->
+
+    <div class="row">
+      <% @older_articles.each do |older_articles| %>
+        <article class="4u special">
+          <a href="<%= article_path(older_articles.id) %>" class="image featured"><img src="images/itsea_report/land_view.jpg" alt="" /></a>
+          <header>
+            <h3><a href="<%= article_path(older_articles.id) %>"><%= older_articles.title.html_safe %></a></h3>
+          </header>
+          <p>
+            <%= older_articles.preview.html_safe %>
+          </p>
+        </article>
+      <% end %>
+    </div>
+
+  </section>
+</div>

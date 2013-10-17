@@ -1,0 +1,3 @@
+== README
+
+This is Kode.WS source code.

@@ -1,0 +1,46 @@
+<div class="wrapper style1">
+
+  <div class="container">
+    <div class="row">
+      <div class="12u skel-cell-mainContent" id="content">
+        <article id="main" class="special">
+          <header>
+            <h2><%= @article.title %></h2>
+            <span class="byline">
+            </span>
+            <img src="/images/24hack_report/24hack_head.jpg" alt="" class="image featured" />
+
+          </header>
+          <div class="main-content">
+
+            <p id="notice"><%= notice %></p>
+
+            <p>
+              <%= @article.body.html_safe %>
+            </p>
+
+            <p>
+              <%= render_shareable %>
+            </p>
+            <p>
+              <% if @article.admin %>
+                <strong>Author:</strong>
+                <%= @article.admin %>
+              <% end %>
+            </p>
+
+            <p>
+              <% if @article.category %>
+              <%= @article.category %>
+                <strong>Category:</strong>
+                <p>>>></p>
+                <% if @article.subcategory? %>
+                  <%= @article.subcategory %>
+                <% end %>
+              <% end %>
+            </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
